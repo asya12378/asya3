@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b16;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #20243b;
+}
+
+.logo {
+    color: #8b7cff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #8b7cff;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero span {
+    color: #8b7cff;
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+button {
+    background: #7865ff;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #5e4be0;
+}
+
+section {
+    padding: 60px 8%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 32px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #13182b;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #252b47;
+}
+
+.card h3 {
+    color: #a294ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.chat {
+    max-width: 650px;
+    margin: auto;
+    background: #13182b;
+    padding: 25px;
+    border-radius: 15px;
+}
+
+#messages {
+    min-height: 120px;
+    margin-bottom: 20px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.chat input {
+    width: 75%;
+    padding: 14px;
+    background: #080b16;
+    border: 1px solid #333b5c;
+    border-radius: 8px;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border-top: 1px solid #20243b;
+}
+
+@media(max-width: 600px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    nav a {
+        margin-left: 8px;
+        font-size: 13px;
+    }
+
+    header {
+        padding: 20px;
+    }
+}
