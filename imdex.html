@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">PORTFOLIO.</div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">Обо мне</a>
+        <a href="#skills">Навыки</a>
+        <a href="#projects">Проекты</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<!-- Главная -->
+
+<div class="hero" id="home">
+    <span>HELLO, I'M A DEVELOPER</span>
+
+    <h1>
+        Создаю современные
+        <span>цифровые</span> решения.
+    </h1>
+
+    <p>
+        Привет! Я начинающий веб-разработчик.
+        Изучаю программирование и создаю
+        современные, красивые сайты.
+    </p>
+
+    <a href="#projects" class="btn">
+        Посмотреть проекты →
+    </a>
+</div>
+
+<!-- Обо мне -->
+
+<section class="about reveal" id="about">
+    <h2 class="title">Обо <span>мне.</span></h2>
+
+    <p>
+        Меня зовут Асия. Я начинающий разработчик,
+        увлекаюсь технологиями, дизайном и программированием.
+        Постоянно изучаю новые инструменты, развиваю свои
+        навыки и работаю над интересными проектами.
+        Моя цель — стать профессиональным программистом.
+    </p>
+</section>
+
+<!-- Навыки -->
+
+<section class="reveal" id="skills">
+    <h2 class="title">Мои <span>навыки.</span></h2>
+
+    <div class="skills">
+
+        <div class="skill">
+            <h3>HTML</h3>
+            <p>Структура веб-сайтов</p>
+        </div>
+
+        <div class="skill">
+            <h3>CSS</h3>
+            <p>Дизайн и оформление сайтов</p>
+        </div>
+
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <p>Интерактивность и логика</p>
+        </div>
+
+        <div class="skill">
+            <h3>Python</h3>
+            <p>Основы программирования</p>
+        </div>
+
+        <div class="skill">
+            <h3>Figma</h3>
+            <p>Создание дизайна интерфейсов</p>
+        </div>
+
+        <div class="skill">
+            <h3>Git</h3>
+            <p>Работа с версиями проектов</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Проекты -->
+
+<section class="projects reveal" id="projects">
+    <h2 class="title">Мои <span>проекты.</span></h2>
+
+    <div class="project-grid">
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700">
+            <div class="project-content">
+                <h3>Online Shop</h3>
+                <p>Современный интернет-магазин с каталогом товаров.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700">
+            <div class="project-content">
+                <h3>Coffee House</h3>
+                <p>Сайт кафе с меню, ценами и корзиной заказов.</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=700">
+            <div class="project-content">
+                <h3>Dashboard</h3>
+                <p>Современная панель управления и аналитики.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Контакты -->
+
+<section class="contact reveal" id="contact">
+    <h2 class="title">Связаться <span>со мной.</span></h2>
+
+    <p>Есть интересный проект? Давайте обсудим!</p>
+
+    <p>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></p>
+
+    <p>Telegram: <a href="https://t.me/your_username">@your_username</a></p>
+
+    <a href="mailto:example@gmail.com" class="btn">
+        Написать мне →
+    </a>
+</section>
+
+<footer>
+    © 2026 Alisher Portfolio. Все права защищены.
+</footer>
+
+<script>
+function reveal() {
+    let elements = document.querySelectorAll(".reveal");
+
+    elements.forEach(element => {
+        let position = element.getBoundingClientRect().top;
+
+        if (position < window.innerHeight - 100) {
+            element.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+
+</body>
+</html>
