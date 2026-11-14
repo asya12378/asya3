@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAST FOOD — Доставка</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🔥 FAST FOOD</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="#delivery">Доставка</a>
+        <a href="#cart">Корзина: <span id="count">0</span></a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>ВКУСНО. БЫСТРО. С ДОСТАВКОЙ!</h1>
+    <p>Любимая еда прямо у твоей двери. Свежие продукты и отличный вкус!</p>
+    <a href="#menu" class="btn">Посмотреть меню</a>
+</div>
+
+<section id="menu">
+    <h2>🍔 Наше меню</h2>
+
+    <div class="menu">
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600">
+            <h3>Бургер</h3>
+            <p>Сочная котлета, сыр и свежие овощи.</p>
+            <p class="price">250 сом</p>
+            <button onclick="add('Бургер',250)">Добавить</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600">
+            <h3>Пицца</h3>
+            <p>Сырная пицца с томатным соусом.</p>
+            <p class="price">450 сом</p>
+            <button onclick="add('Пицца',450)">Добавить</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=600">
+            <h3>Картофель фри</h3>
+            <p>Хрустящий золотистый картофель.</p>
+            <p class="price">120 сом</p>
+            <button onclick="add('Картофель фри',120)">Добавить</button>
+        </div>
+
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1523371683702-9f4e0c1d2b4c?w=600">
+            <h3>Хот-дог</h3>
+            <p>Сосиска, соус и свежая булочка.</p>
+            <p class="price">180 сом</p>
+            <button onclick="add('Хот-дог',180)">Добавить</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="cart">
+    <h2>🛒 Корзина</h2>
+    <div id="products">Корзина пока пустая.</div>
+    <h3 style="margin-top:20px">Итого: <span id="total">0</span> сом</h3>
+    <button class="btn" onclick="order()">Оформить заказ</button>
+</section>
+
+<section id="delivery">
+    <div class="delivery">
+        <h2>🚗 Быстрая доставка</h2>
+        <p>
+            Доставляем любимую еду прямо к вашей двери.<br>
+            Свежие блюда, удобный заказ и отличный сервис!
+        </p>
+        <a href="#menu" class="btn">Заказать сейчас</a>
+    </div>
+</section>
+
+<footer>
+    FAST FOOD © 2026 | Вкус начинается здесь!
+</footer>
+
+<script>
+let cart = [];
+let total = 0;
+
+function add(name, price) {
+    cart.push({name, price});
+    total += price;
+    update();
+}
+
+function update() {
+    document.getElementById('count').innerText = cart.length;
+    document.getElementById('total').innerText = total;
+
+    let products = document.getElementById('products');
+
+    if(cart.length === 0) {
+        products.innerText = 'Корзина пока пустая.';
+        return;
+    }
+
+    products.innerHTML = cart.map((item, i) =>
+        `<p>${item.name} — ${item.price} сом
+        <button onclick="removeItem(${i})">❌</button></p>`
+    ).join('');
+}
+
+function removeItem(index) {
+    total -= cart[index].price;
+    cart.splice(index, 1);
+    update();
+}
+
+function order() {
+    if(cart.length === 0) {
+        alert('Сначала добавьте товары в корзину!');
+        return;
+    }
+
+    let message = 'Ваш заказ:\n' +
+        cart.map(item => item.name + ' — ' + item.price + ' сом').join('\n') +
+        '\nИтого: ' + total + ' сом';
+
+    alert(message + '\n\nДля реального заказа подключите WhatsApp или сервер.');
+}
+</script>
+
+</body>
+</html>
