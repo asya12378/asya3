@@ -1,0 +1,146 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #071526;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0d223b;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #43c6ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 75px 20px 35px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #a9c2d9;
+    font-size: 18px;
+}
+
+.search {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+input {
+    padding: 15px;
+    width: 280px;
+    border: none;
+    border-radius: 7px;
+}
+
+button {
+    padding: 15px 22px;
+    border: none;
+    background: #168bd0;
+    color: white;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.map {
+    padding: 20px 8%;
+    text-align: center;
+}
+
+.map img {
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px #123f62;
+}
+
+section {
+    padding: 60px 8%;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    padding: 25px;
+    background: #102c49;
+    border-radius: 12px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: #17436b;
+}
+
+.card h3 {
+    color: #43c6ff;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #c3d5e5;
+    line-height: 1.7;
+}
+
+.info {
+    background: #0d223b;
+    text-align: center;
+}
+
+.info p {
+    color: #b8cbdc;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #829bb2;
+}
+
+#result {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background: #102c49;
+    border-radius: 10px;
+    display: none;
+}
