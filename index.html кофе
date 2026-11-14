@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COFFEE HOUSE | Кафе</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf7f2;
+    color: #29221e;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #fff;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #8b593b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #29221e;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #a66c45;
+}
+
+.hero {
+    min-height: 550px;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #a66c45;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #805033;
+}
+
+section {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000010;
+    padding-bottom: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 18px 0 10px;
+}
+
+.card p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #a66c45;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.about {
+    background: #eee5db;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.contact p {
+    margin: 15px;
+}
+
+footer {
+    background: #29221e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+#cart {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #a66c45;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">☕ COFFEE HOUSE</div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#menu">Меню</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Добро пожаловать!</h1>
+    <p>Место, где начинается хорошее настроение</p>
+    <a href="#menu" class="btn">Посмотреть меню</a>
+</div>
+
+<section id="menu">
+    <h2 class="section-title">Наше меню</h2>
+
+    <div class="menu">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600">
+            <h3>Капучино</h3>
+            <p>Нежный кофе с молочной пенкой</p>
+            <div class="price">180 сом</div>
+            <button class="btn" onclick="addToCart('Капучино',180)">Заказать</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=600">
+            <h3>Латте</h3>
+            <p>Мягкий кофе с молоком</p>
+            <div class="price">200 сом</div>
+            <button class="btn" onclick="addToCart('Латте',200)">Заказать</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600">
+            <h3>Круассан</h3>
+            <p>Свежая французская выпечка</p>
+            <div class="price">150 сом</div>
+            <button class="btn" onclick="addToCart('Круассан',150)">Заказать</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600">
+            <h3>Шоколадный торт</h3>
+            <p>Нежный десерт с шоколадом</p>
+            <div class="price">250 сом</div>
+            <button class="btn" onclick="addToCart('Шоколадный торт',250)">Заказать</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2 class="section-title">О нашем кафе</h2>
+    <p>
+        COFFEE HOUSE — уютное место для отдыха,
+        встреч с друзьями и вкусного кофе.
+        Мы используем качественные ингредиенты
+        и готовим каждый заказ с заботой.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2 class="section-title">Контакты</h2>
+    <p>📍 Бишкек, Кыргызстан</p>
+    <p>📞 +996 700 000 000</p>
+    <p>🕒 Каждый день: 08:00 – 22:00</p>
+</section>
+
+<footer>
+    <p>© 2026 COFFEE HOUSE. Все права защищены.</p>
+</footer>
+
+<button id="cart" onclick="showCart()">
+    🛒 Корзина: <span id="count">0</span>
+</button>
+
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name, price});
+    total += price;
+
+    document.getElementById("count").textContent = cart.length;
+
+    alert(name + " добавлен в корзину!");
+}
+
+function showCart() {
+    if (cart.length === 0) {
+        alert("Корзина пока пустая!");
+        return;
+    }
+
+    let message = "Ваш заказ:\n\n";
+
+    cart.forEach(item => {
+        message += item.name + " — " + item.price + " сом\n";
+    });
+
+    message += "\nИтого: " + total + " сом";
+
+    alert(message);
+}
+</script>
+
+</body>
+</html>
