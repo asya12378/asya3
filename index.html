@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Great People | Великие люди</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GREAT PEOPLE</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#people">Личности</a>
+        <a href="#about">О проекте</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>ВЕЛИКИЕ ЛЮДИ, ИЗМЕНИВШИЕ МИР</h1>
+    <p>Истории личностей, которые оставили след в истории человечества.</p>
+</div>
+
+<section id="people">
+
+<h2>Известные личности</h2>
+
+<div class="search">
+    <input type="text" id="search"
+    placeholder="Поиск по имени..."
+    oninput="searchPeople()">
+</div>
+
+<div class="people" id="peopleList">
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600" alt="Портрет">
+<h3>Альберт Эйнштейн</h3>
+<p>Физик. Известен теорией относительности и вкладом в развитие науки.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" alt="Портрет">
+<h3>Наполеон Бонапарт</h3>
+<p>Французский военный и государственный деятель, император Франции.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Портрет">
+<h3>Леонардо да Винчи</h3>
+<p>Художник, учёный и изобретатель эпохи Возрождения.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" alt="Портрет">
+<h3>Мария Кюри</h3>
+<p>Учёная, исследователь радиоактивности, дважды лауреат Нобелевской премии.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600" alt="Портрет">
+<h3>Стив Джобс</h3>
+<p>Предприниматель, один из основателей компании Apple.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Портрет">
+<h3>Чингиз Айтматов</h3>
+<p>Кыргызский писатель, автор произведений мировой литературы.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" alt="Портрет">
+<h3>Александр Македонский</h3>
+<p>Македонский царь и выдающийся полководец древности.</p>
+</div>
+
+<div class="person">
+<img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" alt="Портрет">
+<h3>Клеопатра</h3>
+<p>Царица Древнего Египта, известная историческая личность.</p>
+</div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+<h2>О проекте</h2>
+<p>
+Этот проект посвящён людям, которые повлияли на развитие
+науки, искусства, политики, технологий и культуры.
+Их идеи, открытия и достижения продолжают вдохновлять
+новые поколения.
+</p>
+</section>
+
+<footer>
+GREAT PEOPLE © 2026 | История великих личностей
+</footer>
+
+<script>
+function searchPeople() {
+    let value = document.getElementById("search")
+    .value.toLowerCase();
+
+    let people = document.querySelectorAll(".person");
+
+    people.forEach(person => {
+        let name = person.querySelector("h3")
+        .textContent.toLowerCase();
+
+        let description = person.querySelector("p")
+        .textContent.toLowerCase();
+
+        person.classList.toggle(
+            "hidden",
+            !name.includes(value) && !description.includes(value)
+        );
+    });
+}
+</script>
+
+</body>
+</html>
+
