@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Презентация BMW M5</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">BMW M5</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#info">Характеристики</a>
+        <a href="#gallery">Галерея</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>BMW M5</h1>
+    <p>
+        Символ мощности, скорости и элегантности.
+        Автомобиль, который объединяет спортивный
+        характер и комфорт премиум-класса.
+    </p>
+    <a href="#info" class="btn">Узнать больше</a>
+</div>
+
+<section id="info">
+    <h2>Характеристики</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>727 л.с.</h3>
+            <p>Мощность системы</p>
+        </div>
+
+        <div class="card">
+            <h3>3.5 сек</h3>
+            <p>Разгон 0–100 км/ч</p>
+        </div>
+
+        <div class="card">
+            <h3>V8</h3>
+            <p>Бензиновый двигатель</p>
+        </div>
+
+        <div class="card">
+            <h3>305 км/ч</h3>
+            <p>Заявленная максимальная скорость</p>
+        </div>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Галерея автомобиля</h2>
+
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800" alt="BMW">
+        <img src="https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?w=800" alt="Автомобиль">
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800" alt="Спортивная машина">
+    </div>
+</section>
+
+<footer>
+    <p>BMW M5 | Презентация автомобиля © 2026</p>
+</footer>
+
+</body>
+</html>
