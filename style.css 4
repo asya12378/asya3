@@ -1,0 +1,261 @@
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f5f2ed;
+    color: #292722;
+}
+
+header {
+    background: #25241f;
+    color: white;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #c9a77b;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #c9a77b;
+}
+
+.hero {
+    min-height: 580px;
+    background:
+    linear-gradient(#0008,#0008),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10%;
+    color: white;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 6vw, 65px);
+    max-width: 700px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 15px 30px;
+    background: #c9a77b;
+    color: #25241f;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #e1c49d;
+    transform: translateY(-3px);
+}
+
+section {
+    padding: 75px 8%;
+}
+
+.title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.title span {
+    color: #ae8960;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 20px;
+}
+
+.category {
+    background: white;
+    text-align: center;
+    padding: 30px 15px;
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    background: #e9dfd1;
+}
+
+.category h3 {
+    margin-top: 10px;
+}
+
+.category .emoji {
+    font-size: 40px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+}
+
+.product {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000010;
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-7px);
+}
+
+.product img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #a47e53;
+    margin-bottom: 15px;
+}
+
+.product .btn {
+    width: 100%;
+    text-align: center;
+}
+
+.about {
+    background: #e9e1d6;
+    text-align: center;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    color: #615c54;
+    font-size: 17px;
+}
+
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 25px;
+    text-align: center;
+}
+
+.advantage {
+    padding: 25px;
+    background: white;
+    border-radius: 8px;
+}
+
+.advantage h3 {
+    margin-bottom: 10px;
+    color: #a47e53;
+}
+
+.advantage p {
+    color: #777;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px;
+}
+
+footer {
+    background: #25241f;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+#cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 20;
+    border: none;
+    background: #25241f;
+    color: white;
+    padding: 16px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+@media(max-width:650px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 6px;
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+}
