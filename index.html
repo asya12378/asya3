@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CINEMA+</title>
+<link rel="stylesheet" href="style.css"> 
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: #101010;
+    color: white;
+}
+
+header {
+    background: #1b1b1b;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.hero {
+    padding: 90px 8%;
+    background: linear-gradient(90deg,#000c,#0005),
+    url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1400");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkred;
+}
+
+section {
+    padding: 40px 8%;
+}
+
+h2 {
+    margin-bottom: 25px;
+}
+
+.search {
+    padding: 13px;
+    width: 100%;
+    max-width: 350px;
+    background: #222;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 25px;
+}
+
+.categories {
+    margin-bottom: 25px;
+}
+
+.categories button {
+    margin: 5px;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+    gap: 22px;
+}
+
+.movie {
+    background: #202020;
+    padding: 12px;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.movie:hover {
+    transform: translateY(-5px);
+}
+
+.movie img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.movie h3 {
+    margin: 12px 0;
+}
+
+.movie p {
+    color: #aaa;
+    margin-bottom: 12px;
+}
+
+.rating {
+    color: gold;
+    margin-bottom: 12px;
+}
+
+footer {
+    background: #1b1b1b;
+    padding: 25px;
+    text-align: center;
+    color: #888;
+}
+
+@media(max-width:600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    nav a {
+        margin: 7px;
+    }
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">CINEMA+</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#movies">Фильмы</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Добро пожаловать в CINEMA+</h1>
+    <p>Открой мир кино и найди свой любимый фильм!</p>
+    <a href="#movies">
+        <button>Смотреть фильмы</button>
+    </a>
+</div>
+
+<section id="movies">
+    <h2>🎬 Каталог фильмов</h2>
+
+    <input class="search" id="search"
+    placeholder="Найти фильм..."
+    oninput="searchMovies()">
+
+    <div class="categories">
+        <button onclick="filter('Все')">Все</button>
+        <button onclick="filter('Боевик')">Боевик</button>
+        <button onclick="filter('Фантастика')">Фантастика</button>
+        <button onclick="filter('Драма')">Драма</button>
+    </div>
+
+    <div class="movies">
+
+        <div class="movie" data-category="Фантастика">
+            <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=500">
+            <h3>Космос</h3>
+            <p>Фантастика • 2025</p>
+            <div class="rating">★ 9.0</div>
+            <button onclick="watch('Космос')">Подробнее</button>
+        </div>
+
+        <div class="movie" data-category="Боевик">
+            <img src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=500">
+            <h3>Ночная миссия</h3>
+            <p>Боевик • 2024</p>
+            <div class="rating">★ 8.5</div>
+            <button onclick="watch('Ночная миссия')">Подробнее</button>
+        </div>
+
+        <div class="movie" data-category="Драма">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=500">
+            <h3>Последний кадр</h3>
+            <p>Драма • 2025</p>
+            <div class="rating">★ 8.8</div>
+            <button onclick="watch('Последний кадр')">Подробнее</button>
+        </div>
+
+        <div class="movie" data-category="Фантастика">
+            <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=500">
+            <h3>Галактика</h3>
+            <p>Фантастика • 2025</p>
+            <div class="rating">★ 9.2</div>
+            <button onclick="watch('Галактика')">Подробнее</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2>О нашем кинотеатре</h2>
+    <p> C INEMA+ — место для любителей хорошего кино.</p>
+    <p>Приятного просмотра!</p>
+</section>
+
+<footer>
+    © 2026 CINEMA+ | Все права защищены
+</footer>
+
+<script>
+function watch(name) {
+    alert("Вы выбрали фильм: " + name);
+}
+
+function filter(category) {
+    document.querySelectorAll(".movie").forEach(movie => {
+        movie.style.display =
+        category === "Все" ||
+        movie.dataset.category === category
+        ? "block" : "none";
+    });
+}
+
+function searchMovies() {
+    let value = document.getElementById("search").value.toLowerCase();
+
+    document.querySelectorAll(".movie").forEach(movie => {
+        let name = movie.querySelector("h3").textContent.toLowerCase();
+
+        movie.style.display = name.includes(value) ? "block" : "none";
+    });
+}
+</script>
+
+</body>
+</html>
