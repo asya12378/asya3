@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEURO AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">NEURO AI</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#features">Возможности</a>
+        <a href="#chat">Чат</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Будущее — это <span>NEURO AI</span></h1>
+    <p>Новый уровень искусственного интеллекта</p>
+    <button onclick="document.getElementById('chat').scrollIntoView()">
+        Попробовать AI
+    </button>
+</div>
+
+<section id="features">
+    <h2>Возможности AI</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>💬 Общение</h3>
+            <p>Общайся с искусственным интеллектом и задавай вопросы.</p>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Анализ</h3>
+            <p>Получай объяснения сложных тем и анализируй информацию.</p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Программирование</h3>
+            <p>Изучай код, создавай проекты и исправляй ошибки.</p>
+        </div>
+
+        <div class="card">
+            <h3>✨ Идеи</h3>
+            <p>Находи вдохновение для новых проектов и творчества.</p>
+        </div>
+    </div>
+</section>
+
+<section id="chat">
+    <h2>Попробуй NEURO AI</h2>
+
+    <div class="chat">
+        <div id="messages">
+            <p>NEURO AI: Привет! Напиши что-нибудь.</p>
+        </div>
+
+        <input id="question" type="text"
+        placeholder="Напиши сообщение...">
+
+        <button onclick="sendMessage()">Отправить</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 NEURO AI — Artificial Intelligence
+</footer>
+
+<script>
+function sendMessage() {
+    let input = document.getElementById("question");
+    let messages = document.getElementById("messages");
+
+    if (input.value.trim() === "") return;
+
+    messages.innerHTML +=
+        "<p><b>Ты:</b> " + input.value + "</p>";
+
+    messages.innerHTML +=
+        "<p><b>NEURO AI:</b> Это демонстрационный чат. Для настоящих ответов нужно подключить AI API.</p>";
+
+    input.value = "";
+}
+</script>
+
+</body>
+</html>
