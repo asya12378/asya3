@@ -1,0 +1,181 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #faf7f2;
+    color: #29221e;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: #fff;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: #8b593b;
+}
+
+nav a {
+    text-decoration: none;
+    color: #29221e;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #a66c45;
+}
+
+.hero {
+    min-height: 550px;
+    background:
+    linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #a66c45;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #805033;
+}
+
+section {
+    padding: 75px 8%;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px #00000010;
+    padding-bottom: 25px;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card h3 {
+    margin: 18px 0 10px;
+}
+
+.card p {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #a66c45;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.about {
+    background: #eee5db;
+}
+
+.about p {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.contact p {
+    margin: 15px;
+}
+
+footer {
+    background: #29221e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+#cart {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #a66c45;
+    color: white;
+    padding: 15px 22px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@media(max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
