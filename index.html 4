@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUX FURNITURE — Магазин мебели</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">LUX <span>FURNITURE.</span></div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#categories">Категории</a>
+        <a href="#products">Каталог</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<!-- Главная -->
+
+<div class="hero" id="home">
+    <h1>Создайте интерьер своей мечты</h1>
+
+    <p>
+        Современная мебель для вашего дома.
+        Стиль, комфорт и качество в каждой детали.
+    </p>
+
+    <a href="#products" class="btn">Смотреть каталог →</a>
+</div>
+
+<!-- Категории -->
+
+<section id="categories">
+    <h2 class="title">Наши <span>категории</span></h2>
+
+    <div class="categories">
+
+        <div class="category">
+            <div class="emoji">🛋️</div>
+            <h3>Диваны</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🪑</div>
+            <h3>Стулья</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🛏️</div>
+            <h3>Кровати</h3>
+        </div>
+
+        <div class="category">
+            <div class="emoji">🪵</div>
+            <h3>Столы</h3>
+        </div>
+
+    </div>
+</section>
+
+<!-- Каталог -->
+
+<section id="products">
+    <h2 class="title">Наш <span>каталог</span></h2>
+
+    <div class="products">
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700">
+            <div class="product-info">
+                <h3>Современный диван</h3>
+                <p>Мягкий диван для гостиной</p>
+                <div class="price">45 000 сом</div>
+                <button class="btn" onclick="addToCart('Современный диван',45000)">Купить</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=700">
+            <div class="product-info">
+                <h3>Двуспальная кровать</h3>
+                <p>Комфорт и современный дизайн</p>
+                <div class="price">38 000 сом</div>
+                <button class="btn" onclick="addToCart('Двуспальная кровать',38000)">Купить</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1499933374294-4584851497cc?w=700">
+            <div class="product-info">
+                <h3>Рабочий стол</h3>
+                <p>Минималистичный деревянный стол</p>
+                <div class="price">12 000 сом</div>
+                <button class="btn" onclick="addToCart('Рабочий стол',12000)">Купить</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=700">
+            <div class="product-info">
+                <h3>Дизайнерский стул</h3>
+                <p>Удобный стул для дома</p>
+                <div class="price">7 500 сом</div>
+                <button class="btn" onclick="addToCart('Дизайнерский стул',7500)">Купить</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Преимущества -->
+
+<section>
+    <h2 class="title">Почему выбирают <span>нас?</span></h2>
+
+    <div class="advantages">
+
+        <div class="advantage">
+            <h3>Качество</h3>
+            <p>Качественные материалы и внимание к деталям.</p>
+        </div>
+
+        <div class="advantage">
+            <h3>Доставка</h3>
+            <p>Доставка мебели по Бишкеку.</p>
+        </div>
+
+        <div class="advantage">
+            <h3>Ассортимент</h3>
+            <p>Большой выбор мебели для вашего дома.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- О магазине -->
+
+<section class="about" id="about">
+    <h2 class="title">О <span>магазине</span></h2>
+
+    <p>
+        LUX FURNITURE — магазин современной мебели.
+        Мы помогаем создавать уютные и стильные интерьеры.
+        В нашем каталоге вы найдёте мебель для спальни,
+        гостиной, кухни и рабочего пространства.
+    </p>
+</section>
+
+<!-- Контакты -->
+
+<section class="contact" id="contact">
+    <h2 class="title">Наши <span>контакты</span></h2>
+
+    <p>📍 Бишкек, Кыргызстан</p>
+    <p>📞 +996 700 000 000</p>
+    <p>🕒 Каждый день: 09:00 – 20:00</p>
+
+    <a class="btn" href="https://wa.me/996700000000">
+        Написать в WhatsApp
+    </a>
+</section>
+
+<footer>
+    © 2026 LUX FURNITURE. Все права защищены.
+</footer>
+
+<button id="cart" onclick="showCart()">
+    🛒 Корзина: <span id="count">0</span>
+</button>
+
+<script>
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({name, price});
+
+    document.getElementById("count").textContent = cart.length;
+
+    alert(name + " добавлен в корзину!");
+}
+
+function showCart() {
+    if (cart.length === 0) {
+        alert("Ваша корзина пуста!");
+        return;
+    }
+
+    let message = "ВАШ ЗАКАЗ:\n\n";
+    let total = 0;
+
+    cart.forEach(item => {
+        message += item.name + " — " + item.price.toLocaleString("ru-RU") + " сом\n";
+        total += item.price;
+    });
+
+    message += "\nИТОГО: " + total.toLocaleString("ru-RU") + " сом";
+
+    alert(message);
+}
+</script>
+
+</body>
+</html>
