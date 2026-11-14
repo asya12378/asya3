@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MODEL AGENCY</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MODEL AGENCY</div>
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#models">Модели</a>
+        <a href="#about">О нас</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <div>
+        <h1>YOUR STYLE.<br>YOUR FUTURE.</h1>
+        <p>Открой свой потенциал в мире моды и фотографии.</p>
+        <a href="#models" class="btn">НАШИ МОДЕЛИ</a>
+    </div>
+</div>
+
+<section id="models">
+    <h2>НАШИ МОДЕЛИ</h2>
+
+    <div class="models">
+
+        <div class="model">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" alt="Модель">
+            <h3>Alexander</h3>
+            <p>Fashion Model</p>
+        </div>
+
+        <div class="model">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600" alt="Модель">
+            <h3>Sofia</h3>
+            <p>Photo Model</p>
+        </div>
+
+        <div class="model">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600" alt="Модель">
+            <h3>Daniel</h3>
+            <p>Commercial Model</p>
+        </div>
+
+        <div class="model">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600" alt="Модель">
+            <h3>Emma</h3>
+            <p>Fashion Model</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="about" id="about">
+    <h2>О НАШЕМ АГЕНТСТВЕ</h2>
+    <p>
+        MODEL AGENCY — пространство для творчества,
+        стиля и новых возможностей. Мы объединяем
+        талантливых моделей, фотографов и дизайнеров,
+        помогая создавать уникальные проекты в мире моды.
+    </p>
+</section>
+
+<section class="contact" id="contact">
+    <h2>СТАТЬ МОДЕЛЬЮ</h2>
+    <p>Оставь заявку и расскажи немного о себе.</p>
+
+    <form onsubmit="sendForm(event)">
+        <input type="text" id="name" placeholder="Твоё имя" required><br>
+        <input type="email" id="email" placeholder="Твоя почта" required><br>
+        <textarea id="message" placeholder="Расскажи о себе" required></textarea><br>
+        <button type="submit">ОТПРАВИТЬ ЗАЯВКУ</button>
+    </form>
+</section>
+
+<footer>
+    MODEL AGENCY © 2026 | Fashion & Style
+</footer>
+
+<script>
+function sendForm(event) {
+    event.preventDefault();
+
+    let name = document.getElementById('name').value;
+
+    alert('Спасибо, ' + name + '! Твоя заявка заполнена.');
+
+    event.target.reset();
+}
+</script>
+
+</body>
+</html>
