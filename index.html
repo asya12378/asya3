@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI FUTURE</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">AI FUTURE</div>
+
+    <nav>
+        <a href="#home">Главная</a>
+        <a href="#about">Об ИИ</a>
+        <a href="#features">Возможности</a>
+        <a href="#tools">Нейросети</a>
+    </nav>
+</header>
+
+<div class="hero" id="home">
+    <h1>Будущее начинается с <span>AI</span></h1>
+    <p>Открой мир искусственного интеллекта и новых технологий.</p>
+    <a href="#features">
+        <button>Узнать больше →</button>
+    </a>
+</div>
+
+<section class="about" id="about">
+    <h2>Что такое искусственный интеллект?</h2>
+    <p>
+        Искусственный интеллект — это технология,
+        которая позволяет компьютерам выполнять задачи,
+        требующие человеческого мышления.
+        ИИ помогает анализировать данные, создавать изображения,
+        писать тексты и решать сложные задачи.
+    </p>
+</section>
+
+<section id="features">
+    <h2>Возможности ИИ</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🤖 Общение</h3>
+            <p>ИИ может отвечать на вопросы и помогать в обучении.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎨 Генерация изображений</h3>
+            <p>Создание уникальных изображений по текстовому описанию.</p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Программирование</h3>
+            <p>Помощь в написании и анализе программного кода.</p>
+        </div>
+
+        <div class="card">
+            <h3>📊 Анализ данных</h3>
+            <p>Обработка информации и поиск закономерностей.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="tools">
+    <h2>Популярные нейросети</h2>
+
+    <div class="tools">
+        <div class="tool">ChatGPT</div>
+        <div class="tool">Gemini</div>
+        <div class="tool">Claude</div>
+        <div class="tool">Midjourney</div>
+        <div class="tool">DeepSeek</div>
+    </div>
+</section>
+
+<footer>
+    © 2026 AI FUTURE | Мир искусственного интеллекта
+</footer>
+
+<script>
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function() {
+        console.log("Переход: " + this.textContent);
+    });
+});
+</script>
+
+</body>
+</html>
